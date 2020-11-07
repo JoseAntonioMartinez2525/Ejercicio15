@@ -17,17 +17,6 @@
                 margin: 0;
             }
         </style>
-        <script type="text/javascript">
-            function muestraInformacion(e){
-                var informacion=document.getElementById['info'];
-                if (e.type=='mousemove') {
-                    informacion.innerHTML"<h1> Raton </h1>" "<p> Navegador ["+e.screenX+", "+e.screenY+"] </p>" ", ""Pagina ["+pageX+", "+pageY+"] </p>";
-                    informacion.style.backgroundColor = '#FFFFFF';
-                }
-            }
-
-
-        </script>
 
     </head>
     <body onmousemove="muestraInformacion(event)" onkeypress="muestraInformacion(event)" onclick="muestraInformacion(event)">
@@ -113,11 +102,11 @@ function informacion(evento) {
         coordenadaXabsoluta = evento.pageX;
         coordenadaYabsoluta = evento.pageY;
       }
-      coordenadaXrelativa = evento.clinformacionntX;
-      coordenadaYrelativa = evento.clinformacionntY;
+      coordenadaXrelativa = evento.clientX;
+      coordenadaYrelativa = evento.clientY;
       muestraInformacion(['Ratón', 'Navegador ['+coordenadaXrelativa+', '+coordenadaYrelativa+']', 'Pagina ['+coordenadaXabsoluta+', '+coordenadaYabsoluta+']']);
       break;
-    case 'keypress':
+    case 'keypress':a
       document.getElementById('info').style.backgroundColor = '#CCE6FF';
       var caracter = evento.charCode || evento.keyCode;
       var letra = String.fromCharCode(caracter);
